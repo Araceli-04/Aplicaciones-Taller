@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller - Desarrollo de Apps</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Cinzel:wght@600&family=Dosis:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Estilos externos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="name">Jihomara Araceli</div>
+    <img src="upla.jpg" alt="Logo UPLA" class="logo-upla">
+    <div class="verse">
+      <div>“Deja en manos de Dios todo lo que haces, y tus proyectos se harán realidad.”</div>
+      <span class="ref">Proverbios 16:3 💖</span>
+    </div>
+    <nav>
+      <a href="#home" class="active"><i data-lucide="home"></i> Home</a>
+      <a href="#git"><i data-lucide="git-branch"></i> Git</a>
+      <a href="#github"><i data-lucide="cloud"></i> GitHub</a>
+      <a href="#projects"><i data-lucide="folder-kanban"></i> Projects</a>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <!-- HOME -->
+    <div class="card active" id="home">
+      <div class="card-content">
+        <h1 class="section-header">TALLER DE DESARROLLO DE APLICACIONES</h1>
+        <div class="subtitle">Aprende a transformar tus ideas en apps increíbles</div>
+        <p>Crea, experimenta y da vida a proyectos digitales que unen creatividad, lógica y tecnología actual.</p>
+      </div>
+      <footer>
+        UNIVERSIDAD PERUANA LOS ANDES <br>
+        Correo: t00050a@ms.upla.edu.pe | Contacto: 900273905 <br>
+        © 2025 Desarrollo de Aplicaciones
+      </footer>
+    </div>
+
+    <!-- GIT -->
+    <div class="card" id="git">
+      <div class="card-content">
+        <h1 class="section-header">GIT</h1>
+        <div class="subtitle">El corazón del control de versiones</div>
+        <p>Git es un <b>sistema de control de versiones</b> que permite registrar, 
+        gestionar y revertir cambios en los archivos de un proyecto.</p>
+
+        <div class="highlight-box">
+          <h3>Estructura básica</h3>
+          <ul>
+            <li><b>Directorio de trabajo:</b> donde editas los archivos.</li>
+            <li><b>Área de preparación:</b> registra cambios antes de guardarlos.</li>
+            <li><b>Directorio Git:</b> almacena el historial completo del proyecto.</li>
+          </ul>
+        </div>
+
+        <h3>Comandos esenciales:</h3>
+        <div class="commands">
+          git init → crea un nuevo repositorio<br>
+          git clone → copia un repositorio remoto<br>
+          git status → muestra el estado de los archivos<br>
+          git add → prepara archivos para commit<br>
+          git commit -m "mensaje" → guarda cambios<br>
+          git push → envía cambios al remoto<br>
+          git branch → lista o crea ramas
+        </div>
+
+        <p class="note">🌍 Git está disponible para Linux, Windows y Mac.</p>
+      </div>
+      <footer>© 2025 Introducción a Git</footer>
+    </div>
+
+    <!-- GITHUB -->
+    <div class="card" id="github">
+      <div class="card-content">
+        <h1 class="section-header">GITHUB</h1>
+        <div class="subtitle">Tu código en la nube</div>
+        <p>GitHub es una <b>plataforma en la nube</b> que aloja proyectos Git 
+        y permite colaborar con otros desarrolladores de forma sencilla.</p>
+
+        <div class="highlight-box">
+          <h3>✨ ¿Qué puedes hacer?</h3>
+          <ul>
+            <li>Guardar y compartir proyectos.</li>
+            <li>Trabajar en equipo desde cualquier lugar.</li>
+            <li>Explorar repos públicos de otros.</li>
+            <li>Crear ramas y manejar versiones.</li>
+          </ul>
+        </div>
+
+        <h3>Cómo registrarte:</h3>
+        <ol style="text-align:left; max-width:600px; margin:auto;">
+          <li>Ingresa a <a href="https://github.com" target="_blank">github.com</a></li>
+          <li>Clic en <b>Sign up</b> (arriba a la derecha).</li>
+          <li>Completa correo, contraseña y nombre de usuario.</li>
+          <li>Verifica tu cuenta con el correo y el captcha.</li>
+          <li>Configura tu perfil y empieza a crear repositorios.</li>
+        </ol>
+
+        <p class="note">✅ Con tu cuenta puedes subir proyectos y colaborar con el mundo.</p>
+      </div>
+      <footer>© 2025 Introducción a GitHub</footer>
+    </div>
+
+<!-- PROJECTS -->
+<div class="card" id="projects">
+  <div class="card-content">
+    <h1 class="section-header" id="projects-title">PROJECTS</h1>
+
+    <!-- Botón volver -->
+    <button id="backBtn" class="back-button" style="display:none;">
+      Volver a Projects
+    </button>
+
+    <!-- Zona de botones de semanas -->
+    <div id="projects-buttons" class="projects-grid">
+
+      <!-- Semanas activas -->
+      <button onclick="loadWeek('Actividades semanales/Semana1/semana1.html', 'Semana 1')" class="week-card active">
+        <span class="week-badge">Semana 1</span>
+        <p>Java Maven</p>
+      </button>
+
+      <button onclick="loadWeek('Actividades semanales/Semana2/semana2.html', 'Semana 2')" class="week-card active">
+        <span class="week-badge">Semana 2</span>
+        <p>JFrame</p>
+      </button>
+
+      <button onclick="loadWeek('Actividades semanales/Semana3/semana3.html', 'Semana 3')" class="week-card active">
+        <span class="week-badge">Semana 3</span>
+        <p>POO</p>
+      </button>
+
+      <!-- Semanas futuras -->
+      <div class="week-card pending">
+        <span class="week-badge">Semana 4</span>
+        <p>⏳ En espera</p>
+      </div>
+      <div class="week-card pending">
+        <span class="week-badge">Semana 5</span>
+        <p>⏳ En espera</p>
+      </div>
+      <div class="week-card pending">
+        <span class="week-badge">Semana 6</span>
+        <p>⏳ En espera</p>
+      </div>
+      <div class="week-card pending">
+        <span class="week-badge">Semana 7</span>
+        <p>⏳ En espera</p>
+      </div>
+      <div class="week-card pending">
+        <span class="week-badge">Semana 8</span>
+        <p>⏳ En espera</p>
+      </div>
+      <div class="week-card pending">
+        <span class="week-badge">Semana 9</span>
+        <p>⏳ En espera</p>
+      </div>
+      <div class="week-card pending">
+        <span class="week-badge">Semana 10</span>
+        <p>⏳ En espera</p>
+      </div>
+      <div class="week-card pending">
+        <span class="week-badge">Semana 11</span>
+        <p>⏳ En espera</p>
+      </div>
+      <div class="week-card pending">
+        <span class="week-badge">Semana 12</span>
+        <p>⏳ En espera</p>
+      </div>
+
+    </div>
+
+    <!-- Zona donde se cargará el contenido -->
+    <div id="week-content" style="display:none;"></div>
+  </div>
+</div>
+
+
+  <!-- Script externo -->
+  <script src="script.js" defer></script>
+</body>
+</html>
+
