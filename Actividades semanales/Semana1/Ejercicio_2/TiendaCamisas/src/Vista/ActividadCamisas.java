@@ -1,14 +1,14 @@
 package Vista;
-
-import Modelo.Feria;
+import Modelo.Camisa;
 import javax.swing.JOptionPane;
+public class ActividadCamisas extends javax.swing.JFrame {
 
-public class FeriaApp extends javax.swing.JFrame {
-    public FeriaApp() {
+    public ActividadCamisas() {
         initComponents();
-        this.setTitle("Distribución de Inversión en la Feria");
-        this.setLocationRelativeTo(null); // centrar
+        this.setTitle("Venta de Camisas - Descuento 7% + 7%");
+        this.setLocationRelativeTo(null);
         this.setResizable(false);
+
     }
 
     /**
@@ -26,16 +26,17 @@ public class FeriaApp extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        txtMonto = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtPrecio = new javax.swing.JTextField();
+        txtCantidad = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtResultados = new javax.swing.JTextArea();
+        txtSalida = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 204));
 
-        btnCalcular.setBackground(new java.awt.Color(183, 162, 225));
-        btnCalcular.setFont(new java.awt.Font("Cambria", 2, 12)); // NOI18N
+        btnCalcular.setBackground(new java.awt.Color(153, 153, 255));
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -44,7 +45,6 @@ public class FeriaApp extends javax.swing.JFrame {
         });
 
         btnNuevo.setBackground(new java.awt.Color(255, 204, 204));
-        btnNuevo.setFont(new java.awt.Font("Cambria", 2, 12)); // NOI18N
         btnNuevo.setText("Nuevo");
         btnNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -53,7 +53,6 @@ public class FeriaApp extends javax.swing.JFrame {
         });
 
         btnSalir.setBackground(new java.awt.Color(204, 255, 204));
-        btnSalir.setFont(new java.awt.Font("Cambria", 2, 12)); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,65 +65,75 @@ public class FeriaApp extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSalir)
                     .addComponent(btnNuevo)
                     .addComponent(btnCalcular))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addGap(57, 57, 57)
                 .addComponent(btnCalcular)
-                .addGap(40, 40, 40)
+                .addGap(50, 50, 50)
                 .addComponent(btnNuevo)
-                .addGap(47, 47, 47)
+                .addGap(62, 62, 62)
                 .addComponent(btnSalir)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(222, 222, 245));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel1.setFont(new java.awt.Font("Cambria", 2, 12)); // NOI18N
-        jLabel1.setText("Monto total a invertir:");
+        jLabel1.setText("Precio de camisa:");
 
-        txtMonto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMontoActionPerformed(evt);
+        jLabel2.setFont(new java.awt.Font("Cambria", 2, 12)); // NOI18N
+        jLabel2.setText("Cantidad:");
+
+        txtCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantidadKeyTyped(evt);
             }
         });
 
-        txtResultados.setEditable(false);
-        txtResultados.setColumns(20);
-        txtResultados.setRows(5);
-        jScrollPane1.setViewportView(txtResultados);
+        txtSalida.setColumns(20);
+        txtSalida.setRows(5);
+        jScrollPane1.setViewportView(txtSalida);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtMonto)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtPrecio)
+                            .addComponent(txtCantidad))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2)
+                    .addComponent(txtCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -145,53 +154,58 @@ public class FeriaApp extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtMontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMontoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMontoActionPerformed
-
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_btnSalirActionPerformed
-
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
-            try {
-        String sMonto = txtMonto.getText().trim().replace(",", ".");
-        double monto = Double.parseDouble(sMonto);
+        try {
+        double precio = Double.parseDouble(txtPrecio.getText().trim());
+        int cantidad = Integer.parseInt(txtCantidad.getText().trim());
 
-        if (monto <= 0) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Ingrese un monto mayor a cero.");
-            txtMonto.requestFocus();
+        if (precio <= 0 || cantidad <= 0) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Ingrese valores mayores a cero.");
             return;
         }
 
-        Modelo.Feria feria = new Modelo.Feria(monto);
+        Modelo.Camisa c = new Modelo.Camisa(precio, cantidad);
 
-        // Mostrar todo en el JTextArea
-        StringBuilder sb = new StringBuilder();
-        sb.append("Monto total: S/. ").append(String.format("%.2f", monto)).append("\n\n");
-        sb.append("Alquiler: S/. ").append(String.format("%.2f", feria.calcularAlquiler())).append("\n");
-        sb.append("Publicidad: S/. ").append(String.format("%.2f", feria.calcularPublicidad())).append("\n");
-        sb.append("Transporte: S/. ").append(String.format("%.2f", feria.calcularTransporte())).append("\n");
-        sb.append("Servicios: S/. ").append(String.format("%.2f", feria.calcularServicios())).append("\n");
-        sb.append("Decoración: S/. ").append(String.format("%.2f", feria.calcularDecoracion())).append("\n");
-        sb.append("Gastos varios: S/. ").append(String.format("%.2f", feria.calcularGastosVarios())).append("\n");
+        double importe = c.calcularImporteCompra();
+        double d1 = c.calcularPrimerDescuento();
+        double d2 = c.calcularSegundoDescuento();
+        double dTotal = c.calcularDescuentoTotal();
+        double pagar = c.calcularImportePagar();
 
-        txtResultados.setText(sb.toString());
+        txtSalida.setText("      RESULTADOS\n");
+        txtSalida.append("-------------------------\n");
+        txtSalida.append("Importe de compra: S/ " + String.format("%.2f", importe) + "\n");
+        txtSalida.append("Primer descuento: S/ " + String.format("%.2f", d1) + "\n");
+        txtSalida.append("Segundo descuento: S/ " + String.format("%.2f", d2) + "\n");
+        txtSalida.append("Descuento total: S/ " + String.format("%.2f", dTotal) + "\n");
+        txtSalida.append("Importe a pagar: S/ " + String.format("%.2f", pagar) + "\n");
 
     } catch (NumberFormatException e) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Ingrese un monto válido.");
-        txtMonto.requestFocus();
+        javax.swing.JOptionPane.showMessageDialog(this, "Ingrese datos numéricos válidos.");
     }
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
         // TODO add your handling code here:
-            txtMonto.setText("");
-            txtResultados.setText("Ingrese el monto y presione Calcular...");
-            txtMonto.requestFocus();
+        txtPrecio.setText("");
+        txtCantidad.setText("");
+        txtSalida.setText("");
+        txtPrecio.requestFocus();
     }//GEN-LAST:event_btnNuevoActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+          System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void txtCantidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantidadKeyTyped
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)) {
+        evt.consume();
+    }
+    }//GEN-LAST:event_txtCantidadKeyTyped
 
     /**
      * @param args the command line arguments
@@ -210,20 +224,20 @@ public class FeriaApp extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FeriaApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ActividadCamisas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FeriaApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ActividadCamisas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FeriaApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ActividadCamisas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FeriaApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ActividadCamisas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FeriaApp().setVisible(true);
+                new ActividadCamisas().setVisible(true);
             }
         });
     }
@@ -233,10 +247,12 @@ public class FeriaApp extends javax.swing.JFrame {
     private javax.swing.JButton btnNuevo;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField txtMonto;
-    private javax.swing.JTextArea txtResultados;
+    private javax.swing.JTextField txtCantidad;
+    private javax.swing.JTextField txtPrecio;
+    private javax.swing.JTextArea txtSalida;
     // End of variables declaration//GEN-END:variables
 }
