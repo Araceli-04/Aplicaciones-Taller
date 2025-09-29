@@ -1,0 +1,398 @@
+:root {
+  --sidebar-gradient: linear-gradient(180deg, rgba(246,197,175,0.9) 0%, rgba(246,216,224,0.9) 50%, rgba(228,210,247,0.9) 100%);
+  --title-color: #8a63d2;
+  --card-bg: rgba(255, 255, 255, 0.65);
+  --link-hover: rgba(255,255,255,0.65);
+  --highlight: #f3e8ff;
+  --note-bg: #e0f7fa;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Dosis', sans-serif;
+  display: flex;
+  height: 100vh;
+  background: url('mar.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,182,193,0.25), rgba(200,162,200,0.25));
+  z-index: -1;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: var(--sidebar-gradient);
+  backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+  box-shadow: 4px 0 25px rgba(0,0,0,0.1);
+  animation: fadeInLeft 1s ease;
+}
+.name {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  font-size: 18px;
+  color: #875eb5;
+  text-align: center;
+  margin-bottom: 15px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.03);
+}
+.sidebar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  margin-bottom: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.verse {
+  margin: 15px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+.verse .ref {
+  font-family: 'Cinzel', serif;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--title-color);
+  margin-top: 6px;
+  display: block;
+}
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-top: 20px;
+}
+.sidebar nav a {
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 14px;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all .3s ease;
+  font-size: 15px;
+}
+.sidebar nav a.active, .sidebar nav a:hover {
+  background: var(--link-hover);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  transform: translateX(6px);
+  color: #000;
+}
+.sidebar nav a svg {
+  width: 18px;
+  height: 18px;
+  transition: transform .3s ease, color .3s ease;
+}
+.sidebar nav a:hover svg {
+  transform: rotate(10deg);
+  color: var(--title-color);
+}
+
+/* Main */
+.main {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: 28px;
+  padding: 40px;
+  width: 95%;
+  max-width: 1100px;
+  min-height: 80vh;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+  backdrop-filter: blur(15px);
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(255,255,255,0.4);
+  animation: fadeInUp 1.2s ease;
+}
+.card.active { display: flex; }
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.section-header {
+  font-family: 'Cinzel', serif;
+  font-size: 44px;
+  color: var(--title-color);
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 8px rgba(76, 204, 180, 0.3);
+}
+.subtitle {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  margin-bottom: 25px;
+  color: #555;
+  letter-spacing: 1px;
+}
+.highlight-box {
+  background: var(--highlight);
+  padding: 14px;
+  border-radius: 12px;
+  margin: 15px 0;
+  font-size: 16px;
+}
+.commands {
+  background: #f4f4f4;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: left;
+  font-family: monospace;
+  margin: 15px 0;
+}
+.note {
+  background: var(--note-bg);
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+footer {
+  text-align: center;
+  color: #444;
+  font-size: 14px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Projects grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px 24px;
+}
+.week-card {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  animation: zoomIn 0.6s ease;
+}
+.week-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+}
+.week-badge {
+  background: linear-gradient(135deg, #a78bfa, #f472b6);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.week-card.active { border: 2px solid #a78bfa; }
+.week-card.active:hover {
+  background: linear-gradient(145deg, rgba(167,139,250,0.12), rgba(244,114,182,0.12));
+}
+.week-card.pending {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.week-card.pending:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Animaciones */
+@keyframes fadeInLeft { from {opacity:0; transform:translateX(-40px);} to {opacity:1; transform:translateX(0);} }
+@keyframes fadeInUp { from {opacity:0; transform:translateY(40px);} to {opacity:1; transform:translateY(0);} }
+@keyframes zoomIn { from {opacity:0; transform:scale(0.9);} to {opacity:1; transform:scale(1);} }
+
+.sidebar nav a {
+  background: linear-gradient(90deg, #e9d5ff, #d8b4fe);
+  border-radius: 12px;
+  padding: 12px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar nav a:hover {
+  background: linear-gradient(90deg, #c084fc, #a855f7);
+  transform: scale(1.05);
+  color: white;
+}
+/* --- Cajitas de semana --- */
+.week-box {
+  background: #fff;
+  border-radius: 18px;
+  padding: 26px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  margin: 24px auto;
+  max-width: 750px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.week-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* Título de cada enunciado */
+.week-box h2 {
+  font-size: 1.6rem;
+  color: #628F98;           /* verde-azulado */
+  margin-bottom: 16px;
+  border-left: 6px solid #628F98;
+  padding-left: 12px;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* Texto enunciado */
+.enunciado {
+  font-size: 1rem;
+  color: #513a76;           /* morado */
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Botonera */
+.week-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+/* Botones elegantes */
+.week-actions a {
+  text-decoration: none;    /* quita línea azul */
+}
+
+.week-actions button {
+  background: linear-gradient(135deg, #628F98, #4a7078);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.week-actions button:hover {
+  background: linear-gradient(135deg, #4a7078, #3c5b63);
+  transform: translateY(-2px);
+}
+
+/* Íconos en los botones */
+.week-actions button i {
+  font-size: 1.1rem;
+}
+
+/* Botón Volver */
+.back-button {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  background: linear-gradient(135deg, #628F98, #4a7078);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, #4a7078, #3c5b63);
+  transform: translateY(-2px);
+}
+
+/* Botones dentro de enunciados */
+a.btn {
+  text-decoration: none !important;
+  color: #fff !important;
+  background: linear-gradient(135deg, #628F98, #4a7078);
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+a.btn:hover {
+  background: linear-gradient(135deg, #4a7078, #3c5b63);
+  transform: translateY(-2px);
+}
+/* Para que el botón volver tenga referencia */
+#week-content {
+  position: relative;
+}
+
+/* Títulos de semanas en Projects */
+#projects-title.week-title {
+  color: #628F93 !important;
+}
+.logo-upla {
+  width: 120px;
+  border-radius: 0;        
+  margin: 15px 0;
+  opacity: 0.6;            /* 🔥 super tenue */
+  transition: opacity 0.3s ease;
+}
+
+.logo-upla:hover {
+  opacity: 0.50;            /* se ilumina un poco al pasar el mouse */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
