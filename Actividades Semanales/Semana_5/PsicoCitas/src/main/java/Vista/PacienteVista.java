@@ -1,0 +1,200 @@
+
+package Vista;
+
+import java.awt.Color;
+import java.awt.event.ActionListener;
+
+public class PacienteVista extends javax.swing.JFrame {
+
+    public PacienteVista() {
+        initComponents();
+        formulario();
+    }
+    private void formulario() {
+        this.setTitle("Panel del Paciente - PsicoCitas");
+        this.setLocationRelativeTo(this);
+        this.setResizable(false);
+        this.getContentPane().setBackground(Color.white);
+        txtHistorial.setEditable(false);
+        txtMensajeDia.setEditable(false);
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btnVolver = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        btnRegistrarCita = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtHistorial = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtMensajeDia = new javax.swing.JTextArea();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(255, 253, 245));
+        jPanel1.setForeground(new java.awt.Color(255, 253, 245));
+
+        jLabel1.setBackground(new java.awt.Color(255, 253, 245));
+        jLabel1.setFont(new java.awt.Font("Stencil", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 153, 51));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Panel del Paciente");
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+
+        btnVolver.setBackground(new java.awt.Color(255, 204, 102));
+        btnVolver.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnVolver.setForeground(new java.awt.Color(255, 255, 255));
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverActionPerformed(evt);
+            }
+        });
+
+        btnSalir.setBackground(new java.awt.Color(255, 204, 102));
+        btnSalir.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+
+        btnRegistrarCita.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
+        btnRegistrarCita.setForeground(new java.awt.Color(95, 150, 50));
+        btnRegistrarCita.setText("Registrar Cita");
+        btnRegistrarCita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarCitaActionPerformed(evt);
+            }
+        });
+
+        txtHistorial.setBackground(new java.awt.Color(192, 248, 146));
+        txtHistorial.setColumns(20);
+        txtHistorial.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        txtHistorial.setForeground(new java.awt.Color(51, 51, 51));
+        txtHistorial.setRows(5);
+        jScrollPane1.setViewportView(txtHistorial);
+
+        jLabel2.setFont(new java.awt.Font("Book Antiqua", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(95, 150, 50));
+        jLabel2.setText("Historial:");
+
+        jLabel3.setFont(new java.awt.Font("Book Antiqua", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(95, 150, 50));
+        jLabel3.setText("Mensaje del dia :");
+
+        txtMensajeDia.setBackground(new java.awt.Color(192, 248, 146));
+        txtMensajeDia.setColumns(20);
+        txtMensajeDia.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        txtMensajeDia.setForeground(new java.awt.Color(51, 51, 51));
+        txtMensajeDia.setRows(5);
+        jScrollPane2.setViewportView(txtMensajeDia);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 106, Short.MAX_VALUE)
+                        .addComponent(btnRegistrarCita, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(btnVolver))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSalir))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 43, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnRegistrarCita))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnRegistrarCitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarCitaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrarCitaActionPerformed
+
+    public void setHistorial(String texto) { txtHistorial.setText(texto); }
+    public void setMensajeDia(String texto) { txtMensajeDia.setText(texto); }
+
+    // Listeners
+    public void agregarVolverListener(ActionListener l) { btnVolver.addActionListener(l); }
+    public void agregarRegistrarCitaListener(ActionListener l) { btnRegistrarCita.addActionListener(l); }
+    public void agregarSalirListener(ActionListener l) { btnSalir.addActionListener(l); }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegistrarCita;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnVolver;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea txtHistorial;
+    private javax.swing.JTextArea txtMensajeDia;
+    // End of variables declaration//GEN-END:variables
+}
