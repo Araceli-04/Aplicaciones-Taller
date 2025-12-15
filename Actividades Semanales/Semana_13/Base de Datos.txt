@@ -1,0 +1,20 @@
+CREATE DATABASE gestion_tesis_db;
+CREATE TABLE Tesis (
+    idTesis INT NOT NULL AUTO_INCREMENT,
+    titulo VARCHAR(255) NOT NULL,
+    autor VARCHAR(100),
+    anio INT,
+    estado VARCHAR(50),
+    PRIMARY KEY (idTesis)
+);
+-- 1. Crear la tabla Usuario
+CREATE TABLE Usuario (
+    idUsuario INT NOT NULL AUTO_INCREMENT,
+    nombreUsuario VARCHAR(50) NOT NULL UNIQUE,
+    clave VARCHAR(50) NOT NULL,
+    rol VARCHAR(50) NOT NULL,
+    PRIMARY KEY (idUsuario)
+);
+
+-- 2. Insertar un administrador de prueba (Usuario: admin / Clave: 123)
+INSERT INTO Usuario (nombreUsuario, clave, rol) VALUES ('admin', '123', 'Administrador');
