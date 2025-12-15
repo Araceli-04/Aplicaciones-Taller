@@ -1,0 +1,12 @@
+Modelo\Usuario.class
+Controladores\LoginController.class
+Datos\Conexion.class
+Controladores\TesisController.class
+Datos\TesisDAO.class
+com\mycompany\gestion_tesis\resources\JakartaEE11Resource.class
+Modelo\Alumno.class
+Modelo\Evaluacion.class
+Modelo\Tesis.class
+com\mycompany\gestion_tesis\JakartaRestConfiguration.class
+Datos\UsuarioDAO.class
+Modelo\Docente.class
